@@ -8,4 +8,4 @@ sidebar_position: 1
 
 ## Getting Started
 
-Now **Raedius Web Console** only supports access to **YoSmart devices** (LoRa Based).
+Now **Raedius Web Console** only supports access to **YoSmart devices** **(LoRa Based)**.
