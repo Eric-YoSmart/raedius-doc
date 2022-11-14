@@ -2,87 +2,83 @@
 sidebar_position: 2
 ---
 
-# Translate your site
+# 设备组
 
-Let's translate `docs/intro.md` to French.
+![device group management](./img/device-group-management.png)
 
-## Configure i18n
+你可以根据你的使用需求对设备进行逻辑分组  
+例如按照产品类型划分为：水浸监测、温湿度监测、开关控制等  
+按照使用场景可以划分为：漏水检测、高温预警、低温预警等
 
-Modify `docusaurus.config.js` to add support for the `fr` locale:
+## 创建设备分组
 
-```js title="docusaurus.config.js"
-module.exports = {
-  i18n: {
-    defaultLocale: 'en',
-    locales: ['en', 'fr'],
-  },
-};
-```
+1. 进入设备分组管理页，选择左侧项目树需要为其创建分组的项目
+2. 点击右侧 **GROUP** 按钮
 
-## Translate a doc
+   ![device group create](./img/device-group-create.png)
+3. 在弹出框填写分组信息
+  
+   ![device group create form](./img/device-group-create-form.png)  
+   * name 分组名称（必填）
+   * description 分组描述 （选填）
+   * sort 分组排序 （升序，数字越小排在越前面）
+   * icon 分组图标，分组图标，点击 **[此处](https://icon-sets.iconify.design/)** 获取图标，或者直接访问 **[https://icon-sets.iconify.design/](https://icon-sets.iconify.design/)**
+   * sidebar enable 是否在侧边栏显示
+4. 点击**CONFIRM** 按钮，完成分组创建。
 
-Copy the `docs/intro.md` file to the `i18n/fr` folder:
+## 编辑设备分组
 
-```bash
-mkdir -p i18n/fr/docusaurus-plugin-content-docs/current/
+1. 进入设备分组管理页
+2. 点击你所需要修改的设备组操作栏上的 **EDIT** 按钮
 
-cp docs/intro.md i18n/fr/docusaurus-plugin-content-docs/current/intro.md
-```
+   ![device group edit](./img/device-group-edit.png)
+3. 在弹出框修改分组信息
 
-Translate `i18n/fr/docusaurus-plugin-content-docs/current/intro.md` in French.
+   ![device group edit](./img/device-group-edit-form.png)
+4. 点击**CONFIRM** 按钮，完成分组信息变更。
 
-## Start your localized site
+## 删除设备分组
 
-Start your site on the French locale:
+1. 进入设备分组管理页
+2. 点击你所需要删除的设备组操作栏上的 **DELETE** 按钮
 
-```bash
-npm run start -- --locale fr
-```
+   ![device group delete](./img/device-group-delete.png)
 
-Your localized site is accessible at [http://localhost:3000/fr/](http://localhost:3000/fr/) and the `Getting Started` page is translated.
+3. 点击**CONFIRM** 按钮，完成分组删除操作
 
-:::caution
+  ![device group edit](./img/device-group-delete-confirm.png)
 
-In development, you can only use one locale at a same time.
+## 设备分组设置
 
-:::
+### 向分组中添加设备
 
-## Add a Locale Dropdown
+1. 进入设备分组管理页
+2. 点击你所需要添加设备的组操作栏上的 **SETTINGS** 按钮打开设备组信息页面
 
-To navigate seamlessly across languages, add a locale dropdown.
+   ![device group settings](./img/device-group-settings.png)
 
-Modify the `docusaurus.config.js` file:
+3. 点击分组详情页**DEVICE** 按钮，打开设备选择框
 
-```js title="docusaurus.config.js"
-module.exports = {
-  themeConfig: {
-    navbar: {
-      items: [
-        // highlight-start
-        {
-          type: 'localeDropdown',
-        },
-        // highlight-end
-      ],
-    },
-  },
-};
-```
+  ![device group device add](./img/device-group-device-add.png)  
+4. 从弹出的设备选择框中勾选需要添加到分组的设备前面的复选框
 
-The locale dropdown now appears in your navbar:
+ ![device group device add](./img/device-group-device-selection.png)
+5. 点击 **CONFIRM** 按钮，完成设备添加。
 
-![Locale Dropdown](./img/localeDropdown.png)
+### 从分组中移除设备
 
-## Build your localized site
+1. 进入设备分组管理页
+2. 点击你所需要添加设备的组操作栏上的 **SETTINGS** 按钮打开设备组信息页面
 
-Build your site for a specific locale:
+   ![device group settings](./img/device-group-settings.png)
 
-```bash
-npm run build -- --locale fr
-```
+3. 勾选需要进行移除的设备记录上的复选复选框，点击 **DELETE** 按钮
 
-Or build your site to include all the locales at once:
+  ![device group device delete](./img/device-group-delete-selection.png)  
+4. 在弹出确认框点击 **CONFIRM** 按钮，完成设备从分组中移除
 
-```bash
-npm run build
-```
+ ![device group device delete](./img/device-group-device-delete-confirm.png)
+
+### 分组动作执行配置
+
+  点击 **[此处](../action-profile/)** 查看动作配置文档

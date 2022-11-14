@@ -157,8 +157,61 @@ Raedius现在支持两种设备注册方式
 
 ### CONVERSION 标签页
 
-  此功能允许用户在设备上行时，对数据进行处理，支持 javascript脚本
-  
+此功能允许用户在设备上行时，对数据进行处理，仅支持 javascript脚本
+
 ```js
-var msg = msg;
-```  
+var data = msg;
+data.temperature += 0.1;
+data.humidity += 1;
+return data;
+```
+
+### ACTION PROFILE 标签页
+
+点击 **[此处](../action-profile/)** 查看动作配置文档
+
+### ACTIVITIES 标签页
+
+动作配置记录设备的历史活动变更，如设备注册、设备状态变更、设备上线、下线等
+
+![device drawer activities](./img/device-drawer-activities.png)  
+
+:::caution
+  仅支持查询3个月内的设备活动记录
+:::
+
+## 卡片视图
+
+点击下面图示中的表格卡片视图切换按钮到卡片模式
+
+![device card view](./img/device-view-card.png)  
+
+### 设备卡片描述
+
+* 设备名称显示区域  
+
+  ![device card view name](./img/device-card-detail-name.png)
+* 设备类型显示区域
+
+  ![device card device type](./img/device-card-detail-type.png)
+* 设备属性值显示区域
+
+  ![device card view prop value](./img/device-card-detail-prop-val.png)
+* 设备属性图标显示区域
+  
+  ![device card view prop icon](./img/device-card-detail-prop-icon.png)
+  
+  默认设备属性会滚动显示，点击对应的属性图标可显示当前属性。
+* 设备工具栏
+  
+  ![device card view tool bar](./img/device-card-detail-tool-bar.png)
+
+  * 卡片详情按钮
+    点击工具栏中的图标 ![device card view tool bar drawer](./img/device-card-detail-tool-device-drawer.png) 可打开设备详情页。
+  * 点击工具栏中的图标 ![device card view tool bar setting](./img/device-card-detail-tool-card-settings.png) 可打开设备卡片设置页。
+
+    ![device card view tool card setting drawer](./img/device-card-detail-tool-card-settings-drawer.png)  
+    PROPERTIES 设置项，配置需要在卡片显示的设备属性  
+    PROPERTY SCROLL ENABLE 设置项，属性是否滚动显示
+  * 更多  
+    根据不同类型设备，Raedius在右侧工具栏提供了部分设备控制的快捷方式，例如Outlet\Siren\Manipulator开关控制
