@@ -2,42 +2,41 @@
 sidebar_position: 1
 ---
 
-# 什么是项目？
+# What is a *Project?*
 
-**项目** 是一个抽象的概念，在不同的应用场景下其表示的含义不同，例如，在公寓漏水检测的场景下，我们可以创建一个名为 **公寓漏水检测** 的根项目，然后根据实际的情况去创建相应的子项目，假如我们的公寓分布在不同的区域（城市、地区）, 我们可以用区域当做一个二级项目，区域的楼栋作为三级项目，楼栋里面的每一个房间作为一个四级项目，这个例子是通过区域/位置的方式划分资产，用户可以根据实际的使用场景，按照自身业务的实际需求划分项目结构。
+***Project*** is an abstract concept, which has different meanings in different application scenarios. For example, in the scenario of apartment water leakage detection, we can create a root project named Apartment Water Leakage Detection, and then create corresponding If our apartments are distributed in different areas (cities, regions), we can use the area as a second-level project, the building in the area as a third-level project, and each room in the building as a fourth-level project , this example is to divide assets by region/location, and users can divide the project structure according to the actual needs of their own business according to the actual usage scenarios.
 
-在上面的例子，用户最后会创建以下项目结构。
+In the example above, the user would end up creating the following project structure。
 
-```text
-公寓漏水检测
+Apartment Water Leak Detection
 ├── A区
-│   └── 1号楼
-│       ├── 1001号房
-│       └── 1002号房
+│   └── Building #1
+│       ├── Room Number 1001
+│       └── Room Number 1002
 ├── B区
-│   ├── 1号楼
-│   ├── 2号楼
-│   └── 3号楼
+│   ├── Building #1
+│   ├── Building #2
+│   └── Building #3
 └── C区
-    ├── 1号楼
-    ├── 2号楼
-    └── 3号楼
+    ├── Building #1
+    ├── Building #3
+    └── Building #3
 ```
 
-在Raedius中大部分的资产都会与项目绑定
+Most assets in Raedius are bound to projects
 
-+ 用户  
-+ 设备  
-+ 设备组
-+ 告警数据  
-+ 平面图
-+ 动作执行配置
-+ 审核日志
++ user
++ equipment
++ device group
++ Alarm data
++ floor plans
++ Action Execution Configuration
++ audit log
 
-## 项目限制
+## Project Limitations
 
-+ 项目是一种树状的数据结构，最大允许创建四层，每一层级最大允许建立9000个子项目。
++ A project is a folder tree-like data structure, allowing the creation of a maximum of four levels, and a maximum of 9,000 sub-items for each level.
 
-## 数据权限
+## Data Permission
 
-账户数据访问权限为账户当前关联的项目以及下面的所有子项目，用上面的公寓的项目结构举例，如果用户A当前绑定到A区，则用户01拥有A区以及下属所有子级项目的数据访问权限
+The account data access authority is the project currently associated with the account and all sub-projects below. Using the project structure of the above apartment as an example, if user A is currently bound to area A, then user A owns the data of area A and all sub-projects under its access permission.
